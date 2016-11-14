@@ -5,6 +5,7 @@ ratesGenerator.init();
 var server = express();
 
 server.get('/rates', function(req, res) {
+  res.header('Access-Control-Allow-Origin', "*");
     res.jsonp({
         rates: ratesGenerator.getCurrentRates(),
     });
